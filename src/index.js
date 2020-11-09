@@ -9,16 +9,16 @@ const obj = JSON.stringify({
 
 function handleServer(req, res) {
   if (req.url === "/welcome") {
-    res.statusCode = 200;
+    res.status = 200;
     res.write("Welcome to Dominos!");
     res.end();
   }
   if (req.url === "/contact") {
-    res.statusCode = 200;
+    res.status = 200;
     res.write(obj);
     res.end();
   } else {
-    res.statusCode = 404;
+    res.status = 404;
     res.statusMessage = "Not found";
     res.end();
   }
