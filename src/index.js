@@ -10,12 +10,12 @@ const obj = JSON.stringify({
 function handleServer(req, res) {
   if (req.url === "/welcome") {
     res.statusCode = 200;
-    res.statusMessage = "Welcome to Dominos!";
+    res.write("Welcome to Dominos!");
     res.end();
   }
   if (req.url === "/contact") {
     res.statusCode = 200;
-    res.statusMessage = obj;
+    res.write(obj);
     res.end();
   } else {
     res.statusCode = 404;
