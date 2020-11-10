@@ -17,11 +17,10 @@ function handleServer(req, res) {
     res.statusCode = 200;
     res.write(obj);
     res.end();
-  } else {
-    res.statusCode = 404;
-    res.statusMessage = "Not found";
-    res.end();
   }
+  res.statusCode = 404;
+  res.statusMessage = "Not found";
+  res.end();
 }
 
 httpServer.listen(8081);
