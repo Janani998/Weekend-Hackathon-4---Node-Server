@@ -7,8 +7,7 @@ function handleServer(req, res) {
     res.statusCode = 200;
     res.write("Welcome to Dominos!");
     res.end();
-  }
-  if (req.url === "/contact") {
+  } else if (req.url === "/contact") {
     res.statusCode = 200;
     res.write(
       JSON.stringify({
@@ -17,10 +16,11 @@ function handleServer(req, res) {
       })
     );
     res.end();
+  } else {
+    res.statusCode = 404;
+    res.statusMessage = "Not found";
+    res.end();
   }
-  res.statusCode = 404;
-  res.statusMessage = "Not found";
-  res.end();
 }
 
 httpServer.listen(8081);
